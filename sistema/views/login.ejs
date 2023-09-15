@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/index.css">
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <img src="img/login.jpg" alt="img" class="img">
+        </div>
+        <div class="row">
+            <!-- Formulario de inicio de sesión -->
+            <form action="/matriculas" method="post" class="form active" id="login">
+                <h2>Iniciar Sesión</h2>
+                <label for="usuario">Usuario</label>
+                <div class="pass-reset">
+                    <input type="text" name="usuario" class="usuario" id="usuario" placeholder="Nombre de usuario"
+                        required>
+                </div>
+                <label for="password">Contraseña</label>
+                <div class="pass-reset">
+                    <input type="password" class="password" name="contrasena" id="contrasena" placeholder="**********"
+                        required>
+                </div>
+                <div class="pass-reset remember-box">
+                    <input type="checkbox" name="remember" class="remember" id="remember"><span
+                        class="remember-text">Recordar contraseña</span>
+                </div>
+                <button class="btn btn-login" type="submit">Iniciar Sesión</button>
+                <p>¿No tienes una cuenta? <a onclick="changeToRegister()" id="changeToRegister">Regístrate</a></p>
+                <p class="or">o</p>
+                <button class="btn btn-gogle-auth"><i class="google ri-google-fill"></i>Iniciar Sesión con
+                    Google</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

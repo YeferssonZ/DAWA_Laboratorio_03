@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Confirmación de Matrícula</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+
+<body>
+    <div class="container-matriculas mt-5">
+        <h1 class="matriculas-heading">Confirmación de Matrícula</h1>
+        <hr>
+
+        <div class="matricula-details">
+            <h3>Detalle de la matrícula</h3>
+            <p><strong>Curso:</strong>
+                <%= curso %>
+            </p>
+            <p><strong>Módulos seleccionados:</strong></p>
+            <ul>
+                <% if (modulos && modulos.length> 0) { %>
+                    <% for (let i=0; i < modulos.length; i++) { %>
+                        <li>
+                            <%= modulos[i] %>
+                        </li>
+                        <% } %>
+                            <% } else { %>
+                                <li>No se seleccionaron módulos</li>
+                                <% } %>
+            </ul>
+            <p><strong>Medio de Pago:</strong>
+                <%= medioPago %>
+            </p>
+        </div>
+
+        <div class="matricula-details">
+            <h3>Total a pagar</h3>
+            <% let total=0; %>
+                <% for (let i=0; i < modulos.length; i++) { %>
+                    <% if (curso==='Java' ) { total +=1200; } %>
+                        <% if (curso==='PHP' ) { total +=800; } %>
+                            <% if (curso==='.NET' ) { total +=1500; } %>
+                                <% } %>
+                                    <% if (medioPago==='Pago en efectivo' ) { total *=0.9; } %>
+                                        <p class="matricula-total">Total: S/ <%= total.toFixed(2) %>
+                                        </p>
+        </div>
+    </div>
+
+</body>
+
+</html>
